@@ -230,14 +230,13 @@ animationView.addValueCallback(
 or Kotlin
 ```kotlin
   animationView.addValueCallback(
-      KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR_FILTER) { Color.RED };
+    KeyPath("Shape Layer", "Rectangle", "Fill"),
+    LottieProperty.COLOR) { Color.RED }
 ```
 ```kotlin
-animationView.addValueCallback(
+  animationView.addValueCallback(
     KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR_FILTER) { frameInfo -> frameInfo.overallProgress < 0.5 ? Color.GREEN : Color.RED }
-);
+    LottieProperty.COLOR) { frameInfo -> if(frameInfo.overallProgress < 0.5) { Color.GREEN } else { Color.RED } }
 ```
 
 ## Animatable Properties
